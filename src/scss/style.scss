@@ -1,0 +1,124 @@
+@import "./fonts.scss";
+@import "./variables.scss";
+@import "./header.scss";
+
+* {
+  font-family: "Lab Grotesque";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 400;
+  color: #fff;
+  background-color: $gray;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1220px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: $fz-average;
+  line-height: 70px;
+  letter-spacing: 0.105em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.tel {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    90deg,
+    rgba(253, 153, 103, 1) 4%,
+    rgba(255, 207, 122, 1) 83%
+  );
+  border-radius: 2px;
+
+  &__img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.banner {
+    padding-bottom: 121px;
+    background-image: url("../images/banner-img.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+
+    
+  &__title {
+    font-size: $fz-extra-big;
+    font-weight: 300;
+    line-height: 80px;
+    letter-spacing: $main-ls;
+    text-transform: uppercase;
+    background: linear-gradient(
+      190.43deg,
+      #ffffff 49.37%,
+      rgba(255, 255, 255, 0) 99.78%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    max-width: 780px;
+    width: 100%;
+  }
+
+  &__price {
+    color: $yellow;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 40px;
+    letter-spacing: $main-ls;
+    margin-top: 30px;
+
+    span {
+        font-size: 18px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-top: 85px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 120px;
+    width: 100%;
+
+    &-img {
+        width: 30px;
+        height: 30px;
+    }
+
+    &-text {
+        margin-top: 15px;
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+    }
+  }
+}
