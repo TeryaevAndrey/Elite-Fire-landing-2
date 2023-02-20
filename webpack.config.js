@@ -1,50 +1,44 @@
 const path = require("path");
-const htmlWebpackPlugin = require("html-webpack-plugin");
-const miniCssExtractPlugin = require("mini-css-extract-plugin");
-const copyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = {
-  entry: {
-    main: path.resolve(__dirname, "./src/index.js"),
-  },
+module.exports = () => ({
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].bundle.js",
-  },
-  module: {
-    rules: [
-      {
-        test: /\.s[ac]ss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
-      },
-      { test: /\.(js)$/, use: "babel-loader" },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-      },
-      {
-        test: /\.(ttf|eot|woff2?)$/i,
-        type: "asset/resource",
-      },
-    ],
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    clean: true,
   },
   plugins: [
-    new copyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, "./src/images"),
-          to: "dist/images"
-        },
-        {
-          from: path.resolve(__dirname, "./src/fonts"),
-          to: "dist/fonts"
-        },
-      ],
-    }),
-    new miniCssExtractPlugin(),
-    new htmlWebpackPlugin({
-      template: path.resolve(__dirname, "./src/index.html"),
-      filename: "index.html",
-    }),
+      new HtmlWebpackPlugin({
+          template: './src/index.html'
+      }),
+      new MiniCssExtractPlugin({
+          filename: './styles/main.css'
+      })
   ],
-};
+  module: {
+      rules: [
+          {
+              test: /\.(?:ico|png|jpg|jpeg|svg)$/i,
+              type: 'asset/inline'
+          },
+          {
+              test: /\.html$/i,
+              loader: 'html-loader'
+          },
+          {
+              test: /\.css$/i,
+              use: [
+                MiniCssExtractPlugin.loader, 'css-loader'
+              ]
+          },
+          {
+              test: /\.scss$/i,
+              use: [
+                MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
+              ]
+          }
+      ]
+  },
+});
