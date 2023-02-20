@@ -1,5 +1,11 @@
 @font-face {
   font-family: "Lab Grotesque";
+  src: url("../fonts/LabGrotesque-Thin.woff2") format("woff2");
+  font-weight: 250;
+}
+
+@font-face {
+  font-family: "Lab Grotesque";
   src: url("../fonts/LabGrotesque-Regular.woff2") format("woff2");
   font-weight: 400;
 }
