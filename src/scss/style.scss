@@ -567,6 +567,7 @@ ul li {
   text-align: center;
   max-width: 1065px;
   width: 100%;
+  margin: 0 auto;
 }
 .about__list {
   margin-top: 45px;
@@ -583,13 +584,131 @@ ul li {
   border-radius: 2px;
 }
 
+.author {
+  padding: 40px 0;
+}
+
+.author__title {
+  text-align: center;
+}
+
+.author__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+  margin-top: 50px;
+}
+.author__block {
+  max-width: 580px;
+  width: 100%;
+  
+  &:first-child {
+    max-width: 535px;
+    width: 100%;
+  }
+}
+.author__block-img {
+  width: 100%;
+  height: auto;
+}
+.author__list {
+  display: flex;
+  align-items: flex-start;
+  gap: 190px;
+  margin-top: 60px;
+}
+.author__item {
+  display: flex;
+  flex-direction: column;
+}
+.author__item-title {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 55px;
+  letter-spacing: 0.135em;
+  color: rgba(255, 255, 255, 0.5);
+}
+.author__item-text {
+  font-size: 24px;
+}
+.author__item-color {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: $yellow;
+}
+.author__length {
+  
+}
+.range__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.author__length-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 55px;
+}
+.author__length-range {
+  max-width: 350px;
+  width: 100%;
+  position: relative;
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+  &::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    background: $yellow;
+    height: 2px;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    display: block;
+    background: $yellow;
+    top: 50%;
+    cursor: pointer;
+    margin-top: -14px;
+  }
+  
+}
+
+.facial__slider-wrapper {
+  position: relative;
+  width: max-content;
+  padding: 0 35px;
+  
+  .swiper-button-next {
+    right: 0;
+    top: 70%;
+  }
+  .swiper-button-prev {
+    left: 0;
+    top: 70%;
+  }
+}
+
+.facial__panel-slider {
+  width: 250px;
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+
 @media (max-width: 1600px) {
   .refill__img-wrapper {
     right: 0;
   }
 }
 
-@media(max-width: 1220px) {
+@media (max-width: 1220px) {
   .task__list,
   .about__list {
     justify-content: center;

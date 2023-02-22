@@ -19,4 +19,3 @@ const slider = new Swiper(".swiper", {
     },
     modules: [Navigation]
 });
-
