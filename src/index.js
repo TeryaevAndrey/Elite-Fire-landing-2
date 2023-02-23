@@ -1,4 +1,4 @@
-import Swiper, {Navigation} from "swiper";
+import Swiper, { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -8,14 +8,14 @@ const burgerBtn = document.querySelector(".burger");
 const menu = document.querySelector(".menu");
 
 burgerBtn.addEventListener("click", () => {
-    menu.classList.toggle("active");
+  menu.classList.toggle("active");
 });
 
 const slider = new Swiper(".swiper", {
-    loop: true, 
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-    },
-    modules: [Navigation]
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  modules: [Navigation],
 });
